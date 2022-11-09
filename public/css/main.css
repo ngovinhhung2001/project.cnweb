@@ -1,0 +1,127 @@
+:root {
+    --sub-color-2: #ff277d;
+    --main-color: #FD5397;
+    --sub-color: #FF95BF;
+    --light-color: #FFD1E3;
+    /* rgba(255, 149, 191, 0.259) */
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+body{
+    height: 100%; 
+    background-color: rgba(128, 128, 128, 0.05) !important;
+}
+
+p{
+    margin-bottom: 5px;
+}
+
+.text-pink {
+    color: var(--sub-color) !important;
+}
+
+.text-dark-pink {
+    color: var(--main-color) !important;
+}
+
+.text-darker-pink {
+    color: var(--sub-color-2) !important;
+}
+
+.bg-pink {
+    background-color: var(--light-color);
+}
+
+.dropdown-menu{
+    --bs-dropdown-link-active-bg: var(--light-color) !important;
+    /* --bs-dropdown-link-hover-bg: var(--light-color) !important; */
+    --bs-dropdown-link-hover-t: var(--light-color) !important;
+}
+
+.mt-11 {
+    margin-top: 6rem;
+}
+
+.mb-11 {
+    margin-bottom: 6rem;
+}
+
+.fs-4r {
+    font-size: 4rem;
+}
+
+.fs-3r {
+    font-size: 3rem;
+}
+
+.fs-2-5r {
+    font-size: 2.5rem;
+}
+
+.fs-2r {
+    font-size: 2rem;
+}
+
+.fs-0-75r {
+    font-size: 0.75rem !important;
+}
+
+.btn-outline-pink {
+    border-width: 2px;
+    --bs-btn-color: white;
+    --bs-btn-bg: var(--main-color);
+    --bs-btn-border-color: var(--main-color);
+    --bs-btn-hover-color: var(--main-color) !important;
+    --bs-btn-hover-bg: white;
+    --bs-btn-hover-border-color: var(--main-color);
+    --bs-btn-focus-shadow-rgb: 13, 110, 253;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: var(--main-color);
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: var(--main-color);
+    --bs-gradient: none;
+    --bs-btn-focus-box-shadow: 0 0 0 0.25rem #ffffff99;
+}
+
+.btn-close:focus{
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--light-color);;
+    opacity: 1; 
+}
+
+.form-control:focus{
+    border-color: var(--sub-color);
+    box-shadow: 0 0 0 0.25rem var(--light-color)  !important;
+}
+
+a{
+    transition: all 0.9s;
+}
+
+.btn{
+    transition: all 0.5s;
+}
+
+main a:hover ,.dropdown-menu a:hover ,.collapse > a:hover, .cart > a:hover {
+    color: var(--main-color) !important;
+} 
+
+a:hover{
+    color: black !important;
+}
+
+.productImg{
+    display: block;
+	transition: all .3s ease;
+}
+
+.productImg:hover{
+    transform: scale(1.1);
+}
