@@ -13,13 +13,15 @@ use App\SessionGuard as Guard;
 class UserController
 {
 	public function showUserBillDetailPage($id){
-		
+		$bill = Bill::findById($id);
+		$user = User::findById($bill->user_id);
 		$data = [
 			'error' => session_get_flash('error'),
-			'bill' => Bill::findById($id),
+			'bill' => $bill,
             'billsdetails' => BillDetail::findByBillId($id),
             'catalogs' => Catalog::all(),
-            'products' => Product::all()
+            'products' => Product::all(),
+			'user_bill' => $user,
 		];
 
 		render_view('/billDetail', $data);

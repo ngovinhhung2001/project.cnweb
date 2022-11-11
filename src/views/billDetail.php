@@ -27,7 +27,9 @@
                     <div class="card p-0">
                         <div class="card-body">
                             <div class="row ">
-                                <?php if (\App\SessionGuard::user()->user_id == 1) { ?>
+                                <?php 
+                                $user_current = \App\SessionGuard::user();
+                                if ( $user_current->user_id == 1) { ?>
                                     <form action="/bills" method="GET">
                                         <input type="submit" class="btn-close" aria-label="Close" value=""></button>
                                     </form>
@@ -42,6 +44,11 @@
                                 <p class="text-center text-uppercase text-dark-pink fw-bold fs-3">Hóa đơn</p>
 
                             </div>
+                            <hr>
+                            
+                            <p><strong>Tên: </strong> <?= $user_bill->user_name ?></p>
+                            <p><strong>SĐT:</strong> <?= $bill->phone_number ?></p>
+                            <p><strong>Địa chỉ:</strong> <?= $bill->delivery_address ?></p>
                             <hr>
                             <?php
                             if ($bill) {
@@ -62,7 +69,9 @@
                                                     <div class="row">
                                                         <p class="text-muted m-0 fs-0-75r" class="m-0"><?= currency_format($product->product_price, ' VNĐ')  ?></p>
                                                     </div>
-
+                                                    <div class="row">
+                                                        <p class="">x <?= $billsdetail->product_amount ?></p>
+                                                    </div>
                                                 </div>
                                                 <div class="col">
                                                     <p class="text-end fw-bold"><?= currency_format($billsdetail->product_amount * $product->product_price, ' VNĐ') ?></p>

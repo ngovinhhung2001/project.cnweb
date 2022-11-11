@@ -30,7 +30,7 @@
                             <div class="row mt-2">
                                 <p class="text-center text-uppercase text-dark-pink fw-bold fs-3">Hóa đơn</p>
                             </div>
-                            <hr>
+
                             <?php
                             $tongsoluong = 0;
                             if (isset($_SESSION['cart'])) {
@@ -41,8 +41,22 @@
                             if (isset($_SESSION['cart']) && $tongsoluong > 0) {
                                 $tongtienhang = 0;
                                 $tongsoluong = 0;
-                                for ($i = 0; $i < count($_SESSION['cart']); $i++) {
                             ?>
+                                <hr>
+                                <table class="w-100">
+                                    <tr>
+                                        <th class="col-md-2"><label for="phone_number">SĐT: </label></th>
+                                        <td class="col-md-10"><input type="number" id="phone_number" name="phone_number" placeholder="Nhập số điện thoại" form="order" required></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="delivery_address">Địa chỉ: </label></th>
+                                        <td><input type="text" id="delivery_address" name="delivery_address" placeholder="Nhập địa chỉ giao hàng" style="width: 100%;" form="order" required></input>
+                                    </tr>
+                                </table>
+                                <hr>
+                                <?php
+                                for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+                                ?>
                                     <div class="row mb-4">
                                         <div class="col-3 col-sm-2">
                                             <img class="w-100" src="/uploads/<?php echo $_SESSION['cart'][$i]['product_img'] ?>">
@@ -109,18 +123,7 @@
                                     </strong>
                                 </p>
                                 <hr />
-                                <form action="/cart/pay" method="POST">
-                                    <table class="w-100">
-                                        <tr>
-                                            <th class="col-md-2"><label for="number">SĐT: </label></th>
-                                            <td class="col-md-10"><input type="number" id="number" name="number" placeholder="Nhập số điện thoại"></td>
-                                        </tr>
-                                        <tr>
-                                            <th><label for="address">Địa chỉ: </label></th>
-                                            <td><input type="area" id="address" name="address" placeholder="Nhập địa chỉ giao hàng"></td>
-                                        </tr>
-                                    </table>
-
+                                <form id="order" action="/cart/order" method="POST">
                                     <?php for ($i = 0; $i < count($_SESSION['cart']); $i++) { ?>
                                         <input class="d-none" type="number" name="product_<?= $_SESSION['cart'][$i]['product_id'] ?>" value="<?= $_SESSION['cart'][$i]['product_amount'] ?>">
                                     <?php } ?>
@@ -129,11 +132,12 @@
                                         <input class="d-none" type="text" name="user_id" value="<?= \App\SessionGuard::user()->user_id ?>">
                                     <?php } ?>
                                     <div class="row my-4">
-                                        <input type="submit" class="btn btn-outline-pink w-75 mx-auto d-block text-uppercase fw-bold" value="Thanh toán"></input>
+                                        <input type="submit" class="btn btn-outline-pink w-75 mx-auto d-block text-uppercase fw-bold" value="Đặt hàng"></input>
                                     </div>
                                 </form>
 
                             <?php } else { ?>
+                                <hr>
                                 <p class="text-center text-dark-pink fw-bold">Hiện tại giỏ hàng trống.</p>
                                 <p class="text-center text-dark-pink fw-bold">Bạn hãy chọn mua sản phẩm rồi quay lại nhé !</p>
                             <?php } ?>

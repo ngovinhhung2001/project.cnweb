@@ -99,7 +99,7 @@ class CartController
         redirect('/cart');
     }
 
-    public function pay()
+    public function order()
     {
         $bill = new Bill();
         if(\App\SessionGuard::isUserLoggedIn()){
@@ -109,14 +109,14 @@ class CartController
                     $billdetail = new BillDetail();
                     if ($billdetail->fill($bill->bill_id, $_SESSION['cart'][$count])->save()){
                         // unset($_SESSION['cart']);
-                        $_SESSION['message'] = 'Đã thanh toán thành công';
+                        $_SESSION['message'] = 'Đã đặt hàng thành công';
                     }
                 }
                 unset($_SESSION['cart']);
                 redirect('/cart');
             }
         }else{
-            $_SESSION['message'] = 'Vui lòng đăng nhập để có thể thanh toán';
+            $_SESSION['message'] = 'Vui lòng đăng nhập để có thể đặt hàng';
         }
         
         redirect('/cart');

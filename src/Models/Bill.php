@@ -7,6 +7,8 @@ class Bill
     public int $bill_id = -1;
     public int $user_id = -1;
     public string $bill_created_at = '';
+    public string $phone_number = '';
+    public string $delivery_address = '';
 
     public static function all(): array
     {
@@ -30,10 +32,13 @@ class Bill
         if ($this->bill_id >= 0) {
             
         } else {
-            $query = PDO()->prepare('insert into bills (user_id, bill_created_at) values (:user_id, :bill_created_at)');
+            $query = PDO()->prepare('insert into bills (user_id, bill_created_at, phone_number, delivery_address) 
+            values (:user_id, :bill_created_at, :phone_number, :delivery_address)');
             $result = $query->execute([
                 'user_id' => $this->user_id,
-                'bill_created_at' => $this->bill_created_at
+                'bill_created_at' => $this->bill_created_at,
+                'phone_number' => $this->phone_number,
+                'delivery_address' => $this->delivery_address
             ]);
             if ($result) {
                 $this->bill_id = PDO()->lastInsertId();
@@ -93,6 +98,8 @@ class Bill
         $this->bill_id = $row['bill_id'];
         $this->user_id = $row['user_id'];
         $this->bill_created_at = $row['bill_created_at'];
+        $this->phone_number = $row['phone_number'];
+        $this->delivery_address = $row['delivery_address'];
         return $this;
     }
 
@@ -100,6 +107,8 @@ class Bill
     {
         $this->user_id = $data['user_id'] ?? 0;
         $this->bill_created_at = $data['bill_created_at'] ?? '';
+        $this->phone_number = $data['phone_number'] ?? '';
+        $this->delivery_address = $data['delivery_address'] ?? '';
         return $this;
     }
 }
