@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 06, 2022 lúc 02:04 PM
+-- Thời gian đã tạo: Th10 12, 2022 lúc 10:14 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.0.19
 
@@ -33,16 +33,20 @@ DROP TABLE IF EXISTS `bills`;
 CREATE TABLE `bills` (
   `bill_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `bill_created_at` datetime NOT NULL
+  `bill_created_at` datetime NOT NULL,
+  `phone_number` char(10) NOT NULL,
+  `delivery_address` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `bills`
 --
 
-INSERT INTO `bills` (`bill_id`, `user_id`, `bill_created_at`) VALUES
-(1, 2, '2022-11-06 02:03:12'),
-(2, 2, '2022-11-06 02:03:23');
+INSERT INTO `bills` (`bill_id`, `user_id`, `bill_created_at`, `phone_number`, `delivery_address`) VALUES
+(1, 2, '2022-11-06 02:03:12', '0123456789', 'Cần Thơ'),
+(2, 2, '2022-11-06 02:03:23', '0123456789', 'Cần Thơ'),
+(3, 2, '2022-11-07 11:02:08', '0123456789', 'Cần Thơ'),
+(4, 1, '2022-11-07 11:19:49', '0987654321', 'Cần Thơ');
 
 -- --------------------------------------------------------
 
@@ -65,7 +69,9 @@ INSERT INTO `billsdetail` (`bill_id`, `product_id`, `product_amount`) VALUES
 (1, 2, 2),
 (1, 3, 1),
 (1, 7, 1),
-(2, 7, 3);
+(2, 7, 3),
+(3, 3, 1),
+(4, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -187,7 +193,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `bill_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `catalogs`
