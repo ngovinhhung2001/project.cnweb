@@ -55,12 +55,14 @@ class UserController
 
 		if (!$user) {
 			// Người dùng không tồn tại...
+			$_SESSION['message'] = 'Sai email hoặc mật khẩu.';
 			$errors['email'] = 'Sai email hoặc mật khẩu.';
 		} else if (Guard::login($user, $user_credentials)) {
 			// Đăng nhập thành công...
 			redirect('/home');
 		} else {
 			// Sai mật khẩu...
+			$_SESSION['message'] = 'Sai email hoặc mật khẩu.';
 			$errors['password'] = 'Sai email hoặc mật khẩu.';
 		}
 

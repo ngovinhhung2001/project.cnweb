@@ -34,12 +34,12 @@
         </div>
         <div class="container">
             <div class="row justify-content-around mt-5">
-                <div class="col-sm-4 fw-bold">
+                <div class="col-sm-4 fw-bold ">
                     <a href="/products/detail/<?= $product->product_id ?>">
                         <img class="productImg card-img-top" src="/uploads/<?= $product->product_img ?>">
                     </a>
                 </div>
-                <div class="col-sm-7 mt-5">
+                <div class="col-sm-6 mt-5">
                     <form action="/cart/add/<?= $product->product_id ?>" method="POST">
                         <p class="card-title text-uppercase h2"><?= $product->product_name ?></p>
                         <p class="card-text mt-3"><?= $product->product_info ?></p>
