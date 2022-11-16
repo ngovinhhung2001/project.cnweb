@@ -19,7 +19,7 @@
                 <h1 class="d-inline text-dark-pink text-uppercase">Danh mục</h1>
             </div>
         </div>
-        <div class="container">
+        <div class="container mt-3">
             <table class="table border w-75 mx-auto">
                 <form method="POST" action="/catalogs/add">
                     <tr>

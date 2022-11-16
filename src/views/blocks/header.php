@@ -56,11 +56,11 @@
                         <i class="text-dark-pink fw-bold ms-2 fst-normal"> <?= \App\SessionGuard::user()->user_name ?> </i>
                     </a>
                     <ul id="dropdown-menu-user" class="dropdown-menu rounded">
-                        <li><a class="dropdown-item text-dark-pink fw-bold" href="/logout" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">Đăng xuất</a></li>
                         <?php if (\App\SessionGuard::user()->user_id != 1) : ?>
                             <li><a class="dropdown-item text-dark-pink fw-bold" href="/users/bills">Hóa đơn</a></li>
                         <?php endif; ?>
+                        <li><a class="dropdown-item text-dark-pink fw-bold" href="/logout" onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">Đăng xuất</a></li>
                     </ul>
                     <form id="logout-form" action="/logout" method="POST" style="display: none;">
                     </form>
