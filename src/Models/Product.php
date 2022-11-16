@@ -90,6 +90,8 @@ class Product
 						'product_id_cond' => $old_product_id
 					]);
 				}
+			}else{
+				$_SESSION['message'] = 'ID sản phẩm đã tồn tại. Vui lòng chọn ID khác.';
 			}
 		} else {
 			move_uploaded_file($this->product_img_temp, 'uploads/' . $this->product_img);

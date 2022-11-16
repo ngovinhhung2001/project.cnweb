@@ -45,8 +45,12 @@
                 </div>
             </div>
         </div>
+
     </main>
     <?php
+    if (isset($_SESSION['message'])) {
+        require_once 'blocks/modal.php';
+    }
     require_once 'partials/js.php';
     ?>
 </body>

@@ -24,23 +24,26 @@
         <div class="container">
             <table class="table border w-75 mx-auto">
                 <form method="POST" action="/catalogs/edit/<?= $catalog->catalog_id ?>">
-                        <tr>
-                            <td class="text-end">Mã danh mục</td>
-                            <td><input type="text" value="<?= $catalog->catalog_id ?>" name="catalog_id" class="w-50"> </td>
-                        </tr>
-                        <tr>
-                            <td class="text-end">Tên danh mục</td>
-                            <td><input type="text" value="<?= $catalog->catalog_name ?>" name="catalog_name" class="w-50"> </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><input type="submit" value="Sửa danh mục"></td>
-                        </tr>
+                    <tr>
+                        <td class="text-end">Mã danh mục</td>
+                        <td><input type="text" value="<?= $catalog->catalog_id ?>" name="catalog_id" class="w-50" required> </td>
+                    </tr>
+                    <tr>
+                        <td class="text-end">Tên danh mục</td>
+                        <td><input type="text" value="<?= $catalog->catalog_name ?>" name="catalog_name" class="w-50" required> </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Sửa danh mục"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
                         <td>
                             <form action="/catalogs/add" method="GET">
                                 <input type="submit" value="Quay về">
                             </form>
                         </td>
+                    </tr>
                 </form>
             </table>
         </div>

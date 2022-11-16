@@ -21,7 +21,7 @@
                             <a href="/home"><img src="/img/logo.png" class="card-img-top my-4 d-block mx-auto"></a>
                         </div>
                         <div class="card-body w-75">
-                            <form id="signupForm" action="/register" method="POST">
+                            <form action="/register" method="POST">
                                 <br>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend input-group-text rounded-start"><i class="fas fa-user"></i></div>

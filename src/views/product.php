@@ -26,7 +26,7 @@
                 <div class="row pt-3 mb-3 ">
                     <nav class="col-12" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item fw-bold active"><a class=" text-reset" href="home.html" style="text-decoration: none;">Trang chủ</a></li>
+                            <li class="breadcrumb-item fw-bold active"><a class=" text-reset" href="/" style="text-decoration: none;">Trang chủ</a></li>
                             <li class="breadcrumb-item fw-bold text-dark-pink" aria-current="page">Sản phẩm</li>
                         </ol>
                     </nav>

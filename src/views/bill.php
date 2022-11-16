@@ -21,7 +21,7 @@
                 <h1 class="d-inline text-dark-pink text-uppercase">Hóa Đơn</h1>
             </div>
         </div>
-        <div class="container">
+        <div class="container mt-5">
             <table class="table border w-75 mx-auto">
                 <tr class="text-center">
                     <td>ID</td>

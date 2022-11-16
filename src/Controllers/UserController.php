@@ -112,20 +112,20 @@ class UserController
 
 	public function register()
 	{
-		$this->saveFormValues($_POST, ['password', 'password_confirmation']);
-
 		$data = $this->filterUserData($_POST);
 		$model_errors = User::validate($data);
 		if (empty($model_errors)) {
 			// Dữ liệu hợp lệ...
 			$this->createUser($data);
 
-			$messages = ['success' => 'User has been created successfully.'];
-			render_view('/login', ['messages' => $messages]);
+			$_SESSION['message'] = 'Đã đăng kí thành viên thành công';
+			redirect('/login');
 		}
 
 		// Dữ liệu không hợp lệ...
-		render_view('/register', ['errors' => $model_errors]);
+
+		$this->saveFormValues($_POST, ['password', 'password_confirmation']);
+		render_view('/register', ['errors' => $model_errors, 'old' => $this->getSavedFormValues() ]);
 	}
 
 	protected function filterUserData(array $data)

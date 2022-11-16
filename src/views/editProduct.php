@@ -27,15 +27,15 @@
 
                     <tr>
                         <td class="text-end">Mã sản phẩm</td>
-                        <td><input type="text" name="product_id" class="w-50" value="<?php echo $product->product_id ?>"></td>
+                        <td><input type="text" name="product_id" class="w-50" value="<?php echo $product->product_id ?>" required></td>
                     </tr>
                     <tr>
                         <td class="text-end">Tên sản phẩm</td>
-                        <td><input type="text" name="product_name" class="w-50" value="<?php echo $product->product_name  ?>"></td>
+                        <td><input type="text" name="product_name" class="w-50" value="<?php echo $product->product_name ?>" required></td>
                     </tr>
                     <tr>
                         <td class="text-end">Giá</td>
-                        <td><input type="text" name="product_price" class="w-50" value="<?php echo $product->product_price ?>"></td>
+                        <td><input type="text" name="product_price" class="w-50" value="<?php echo $product->product_price ?>" required></td>
                     </tr>
                     <tr>
                         <td class="text-end">Hình ảnh</td>

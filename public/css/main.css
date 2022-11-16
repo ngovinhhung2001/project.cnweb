@@ -102,12 +102,14 @@ p{
 }
 
 a{
-    transition: all 0.9s;
+    transition: all 0.6s !important;
 }
 
 .btn{
-    transition: all 0.5s;
+    transition: all 0.5s !important;
 }
+
+
 
 main a:hover ,.dropdown-menu a:hover ,.collapse > a:hover, .cart > a:hover {
     color: var(--main-color) !important;
